@@ -16,3 +16,7 @@
 	background-color: var(--dark-purple);
 	color: white;
 }
+
+.breadcrumb a:hover {
+	color: red;
+}
