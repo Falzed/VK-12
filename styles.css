@@ -8,6 +8,12 @@
 	background-color: var(--light-purple);
 	color: white;
 }
+.light-purple button {
+	color: gold;
+}
+.light-purple .disabled {
+	color: black;
+}
 .medium-purple {
 	background-color: var(--medium-purple);
 	color: white;
@@ -32,3 +38,10 @@
 pre {
 	background-color: slategray;
 }
+
+/* @media (max-width: 767px) {
+	#side-bar {
+		min-height: 33.3333333%;
+		height: 33.3333333%;
+	}
+} */

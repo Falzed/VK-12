@@ -12,6 +12,17 @@
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="styles.css" />
+	<script>
+		function disableAccordionElement(element) {
+			const links = [document.getElementById("overviewLink"), document.getElementById("buildingsLink"), document.getElementById("locationsLink")];
+			links.forEach(e => {
+				if (e.classList.contains("disabled")) {
+					e.classList.toggle("disabled")
+				}
+			});
+			element.classList.toggle("disabled");
+		}
+	</script>
 </head>
 
 <body>
@@ -33,9 +44,15 @@
 			<div class="col-xs-3 col-lg-3 p-3 h-100" id="side-bar">
 				<div class="light-purple p-2 overflow-auto h-100">
 					<ul class="no-bullet">
-						<li><a data-bs-toggle="collapse" href="#overview" data-bs-parent="#subPage" aria-expanded="true">Overview</a></li>
-						<li><a data-bs-toggle="collapse" href="#buildings" data-bs-parent="#subPage" aria-expanded="false">Buildings</a></li>
-						<li><a data-bs-toggle="collapse" href="#locations" databs--parent="#subPage" aria-expanded="false">Locations</a></li>
+						<li><button type="button" class="btn btn-link disabled" data-bs-toggle="collapse"
+								data-bs-target="#overview" data-bs-parent="#subPage" aria-expanded="true"
+								id="overviewLink" onclick="disableAccordionElement(this)">Overview</button></li>
+						<li><button type="button" class="btn btn-link" data-bs-toggle="collapse"
+								data-bs-target="#buildings" data-bs-parent="#subPage" aria-expanded="false"
+								id="buildingsLink" onclick="disableAccordionElement(this)">Buildings</button></li>
+						<li><button type="button" class="btn btn-link" data-bs-toggle="collapse"
+								data-bs-target="#locations" databs--parent="#subPage" aria-expanded="false"
+								id="locationsLink" onclick="disableAccordionElement(this)">Locations</button></li>
 					</ul>
 				</div>
 			</div>
@@ -66,10 +83,11 @@
 								your realm size, or you need other means to prevent usurpation (like the rest of the
 								duchy being held by characters of hostile religions).
 
-								Furthermore, you want the capital barony of the county to be able to build a terrain-dependent
-								building that gives you more knights and/or knight effectiveness
+								Furthermore, you want the capital barony of the county to be able to build a
+								terrain-dependent
+								building that gives you more knights and/or knight effectiveness.
 
-								
+
 							</div>
 							<div class="collapse" id="buildings" data-bs-parent="#subPage">
 								There are several non-special buildings that give you knights and knight effectiveness
@@ -200,7 +218,7 @@
 							</div>
 							<div class="collapse" id="locations" data-bs-parent="#subPage">
 								<p>
-									
+
 									Secondly, you want the de jure capital barony of the de jure capital county of the
 									duchy to have a terrain that lets you build either
 									a camelry or an elephantry.
@@ -556,7 +574,8 @@ def find_by_terrain(target):
 floodplains = ['floodplains']
 find_by_terrain(floodplains)</code></pre>
 								</div>
-								<br>Regardless, the script does its job. Though it can only find you jungles, it doesn't know you can only build elephantries in India and South East
+								<br>Regardless, the script does its job. Though it can only find you jungles, it doesn't
+								know you can only build elephantries in India and South East
 								Asia, not Africa.
 								</p>
 							</div>
