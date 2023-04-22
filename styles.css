@@ -20,3 +20,15 @@
 .breadcrumb a:hover {
 	color: red;
 }
+
+.no-bullet {
+	list-style-type: none;
+}
+
+.no-bullet a:hover {
+	color: red;
+}
+
+pre {
+	background-color: slategray;
+}
