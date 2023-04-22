@@ -1,0 +1,18 @@
+:root {
+	--light-purple: #B26DE7;
+	--medium-purple: #68159A;
+	--dark-purple: #301842;
+}
+
+.light-purple {
+	background-color: var(--light-purple);
+	color: white;
+}
+.medium-purple {
+	background-color: var(--medium-purple);
+	color: white;
+}
+.dark-purple {
+	background-color: var(--dark-purple);
+	color: white;
+}
