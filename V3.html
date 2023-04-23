@@ -14,7 +14,8 @@
 	<link rel="stylesheet" href="styles.css" />
 	<script>
 		function disableAccordionElement(element) {
-			const links = [document.getElementById("overviewLink"), document.getElementById("priceFormulaLink"), document.getElementById("valueProducedLink")];
+			const links = [document.getElementById("overviewLink"), document.getElementById("priceFormulaLink"), document.getElementById("valueProducedLink"),
+			document.getElementById("galleryLink")];
 			links.forEach(e => {
 				if (e.classList.contains("disabled")) {
 					e.classList.toggle("disabled")
@@ -28,7 +29,7 @@
 <body>
 	<div class="container p-2 d-flex vh-100 flex-column">
 		<div class="row dark-purple gx-3" id="top-row">
-			<div class="col-sm-3 p-2">LOGO HERE</div>
+			<div class="col-sm-3 p-2"></div>
 			<div class="col-sm-4 p-2">
 
 				<ul class="breadcrumb">
@@ -45,14 +46,18 @@
 				<div class="light-purple p-2 overflow-auto h-100">
 					<ul class="no-bullet">
 						<li><button data-bs-toggle="collapse" data-bs-target="#overview" data-bs-parent="#subPage"
-								aria-expanded="true" type="button" class="btn btn-link disabled"
-								id="overviewLink" onclick="disableAccordionElement(this)" aria-controls="overview">Overview</button></li>
+								aria-expanded="true" type="button" class="btn btn-link disabled" id="overviewLink"
+								onclick="disableAccordionElement(this)" aria-controls="overview">Overview</button></li>
 						<li><button data-bs-toggle="collapse" data-bs-target="#priceFormula" data-bs-parent="#subPage"
-								id="priceFormulaLink" onclick="disableAccordionElement(this)" aria-expanded="false" type="button"
-								class="btn btn-link" aria-controls="priceFormula">Price formula</button></li>
+								id="priceFormulaLink" onclick="disableAccordionElement(this)" aria-expanded="false"
+								type="button" class="btn btn-link" aria-controls="priceFormula">Price formula</button>
+						</li>
 						<li><button data-bs-toggle="collapse" data-bs-target="#value" data-bs-parent="#subPage"
-								id="valueProducedLink" onclick="disableAccordionElement(this)" aria-expanded="false" type="button"
-								class="btn btn-link" aria-controls="value">Value produced</button></li>
+								id="valueProducedLink" onclick="disableAccordionElement(this)" aria-expanded="false"
+								type="button" class="btn btn-link" aria-controls="value">Value produced</button></li>
+						<li><button data-bs-toggle="collapse" data-bs-target="#gallery" data-bs-parent="#subPage"
+								id="galleryLink" onclick="disableAccordionElement(this)" aria-expanded="false"
+								type="button" class="btn btn-link" aria-controls="gallery">Gallery</button></li>
 					</ul>
 				</div>
 			</div>
@@ -61,35 +66,77 @@
 					<div id="subPage">
 						<div class="accordion-group">
 							<div class="collapse show" id="overview" data-bs-parent="#subPage">
-								This is some analysis of the economics of Victoria 3 I did soon after release. It might be out of date.
+								This is some analysis of the economics of Victoria 3 I did soon after release. It might
+								be out of date.
 							</div>
 							<div class="collapse" id="priceFormula" data-bs-parent="#subPage">
-								When the ratio of sell orders to buy orders is between 0.5 and 2, the price of a good in a market is calculated as its base price multiplied by<br>
-								<img src="images/V3/vicky_price.png" class="img-fluid" alt="3/4 * B/S + 1/4 if B>=S, 7/4 - 3/4 * S/B if B&lt;S">
-								<br>where B is total buy orders for the good in the market, and S is total sell orders for the good in the market. As you might know, the price of a good can
+								When the ratio of sell orders to buy orders is between 0.5 and 2, the price of a good in
+								a market is calculated as its base price multiplied by<br>
+								<img src="images/V3/vicky_price.png" class="img-fluid"
+									alt="3/4 * B/S + 1/4 if B>=S, 7/4 - 3/4 * S/B if B&lt;S">
+								<br>where B is total buy orders for the good in the market, and S is total sell orders
+								for the good in the market. As you might know, the price of a good can
 								never go above twice its base price or below one fourth its base price.
-								<br>I'm not sure if this is stated elsewhere, but this is the result of a polynomial fit on the prices I had in a save, with R^2=0.9997.
+								<br>I'm not sure if this is stated elsewhere, but this is the result of a polynomial fit
+								on the prices I had in a save, with R^2=0.9997.
 								The formula is also quite elegant, so I'm confident it is correct.
-								<img src="images/V3/pricemult.png" class="img-fluid" alt="figure of price as function of ratio of sell orders to buy orders">
+								<img src="images/V3/pricemult.png" class="img-fluid"
+									alt="figure of price as function of ratio of sell orders to buy orders">
 							</div>
 							<div class="collapse" id="value" data-bs-parent="#subPage">
-								Assuming no trade with other markets, one might consider the total value of a good produced in a market as the sum of total revenue to producers, and the
-								money saved by consumers compared to the price being twice the base price (i.e. production below half of consumption).
-								<br><img src="images/V3/value.png" class="img-fluid" alt="Figure of total value as function of the ratio of sell orders to buy orders">
-								<br><img src="images/V3/value_triple.png" class="img-fluid" alt="Figure of total value as function of the ratio of sell orders to buy orders, as well as seller revenue and buyer savings">
+								Assuming no trade with other markets, one might consider the total value of a good
+								produced in a market as the sum of total revenue to producers, and the
+								money saved by consumers compared to the price being twice the base price (i.e.
+								production below half of consumption).
+								<br><img src="images/V3/value.png" class="img-fluid"
+									alt="Figure of total value as function of the ratio of sell orders to buy orders">
+								<br><img src="images/V3/value_triple.png" class="img-fluid"
+									alt="Figure of total value as function of the ratio of sell orders to buy orders, as well as seller revenue and buyer savings">
 								The derivative of this might be interesting:
-								<br><img src="images/V3/incremental_value.png" class="img-fluid" alt="Derivative of total value with respect to the ratio of sell orders to buy orders">
-								As you can see, the value of each additional unit sold spikes after sell orders reach half of buy orders. 
+								<br><img src="images/V3/incremental_value.png" class="img-fluid"
+									alt="Derivative of total value with respect to the ratio of sell orders to buy orders">
+								As you can see, the value of each additional unit sold spikes after sell orders reach
+								half of buy orders.
+
+							</div>
+							<div class="collapse" id="gallery" data-bs-parent="#subPage">
+								<div id="galleryCarousel" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<img class="d-block w-100" src="images/V3/revenue.png" alt="Revenue graph">
+										</div>
+										<div class="carousel-item">
+											<img class="d-block w-100" src="images/V3/revenue_derivative.png"
+												alt="Graph of the derviative of revenue">
+										</div>
+										<div class="carousel-item">
+											<img class="d-block w-100" src="images/V3/savings.png" alt="Savings graph">
+										</div>
+										<div class="carousel-item">
+											<img class="d-block w-100" src="images/V3/value_triple.png"
+												alt="Value graph">
+										</div>
+									</div>
+									<button class="carousel-control-prev" data-bs-target="#galleryCarousel" role="button"
+										data-bs-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</button>
+									<button class="carousel-control-next" data-bs-target="#galleryCarousel" role="button"
+										data-bs-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row gx-3">
-			<div class="col dark-purple p-2" id="bot-row">
-				BOTTOM ROW
-			</div>
+		<div class="row gx-3 dark-purple p-2" id="bot-row">
+			<div class="col-xs-8 col-sm-8 col-md-9 col-lg-10"></div>
+			<div class="col-xs-4 col-sm-4 col-md-3 col-lg-2"> &#169; Oskari Kulmala</div>
 		</div>
 	</div>
 </body>

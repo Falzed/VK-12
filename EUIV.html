@@ -28,7 +28,7 @@
 <body>
 	<div class="container p-2 d-flex vh-100 flex-column">
 		<div class="row dark-purple gx-3" id="top-row">
-			<div class="col-sm-3 p-2">LOGO HERE</div>
+			<div class="col-sm-3 p-2"></div>
 			<div class="col-sm-4 p-2">
 
 				<ul class="breadcrumb">
@@ -51,8 +51,8 @@
 								data-bs-target="#adminEfficiency" data-bs-parent="#subPage" aria-expanded="false"
 								id="adminEfficiencyLink" onclick="disableAccordionElement(this)" aria-controls="adminEfficiency">Admin Efficiency</button></li>
 						<li><button type="button" class="btn btn-link" data-bs-toggle="collapse"
-								data-bs-target="#eu4-3" data-bs-parent="#subPage" aria-expanded="false"
-								id="eu4-link-3" onclick="disableAccordionElement(this)" aria-controls="eu4-3">Eu4-3</button></li>
+								data-bs-target="#diploAnnex" data-bs-parent="#subPage" aria-expanded="false"
+								id="diploAnnexLink" onclick="disableAccordionElement(this)" aria-controls="diploAnnex">Diplomatic annexation cost</button></li>
 					</ul>
 				</div>
 			</div>
@@ -61,23 +61,100 @@
 					<div id="subPage">
 						<div class="accordion-group">
 							<div class="collapse show" id="overview" data-bs-parent="#subPage">
-								EUIV OVERVIEW
+								This is just some modifier stacking for now.
 							</div>
 							<div class="collapse" id="adminEfficiency" data-bs-parent="#subPage">
-								Admin Efficiency stuff here
+								There are several admin efficiency bonuses available through the missions of formable tags (incomplete):
+								<div class="table-responsive">
+									<table class="table table-dark">
+										<thead>
+											<tr>
+												<th scope="col">Formable</th>
+												<th scope="col">Bonus</th>
+												<th scope="col">Endtag</th>
+											</tr>
+											<tr>
+												<th scope="row">Sardinia-Piedmont</th>
+												<td>5%</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<th scope="row">Austria</th>
+												<td>5%</td>
+												<td>German</td>
+											</tr>
+											<tr>
+												<th scope="row">Prussia</th>
+												<td>5%</td>
+												<td>German (can be formed by other germans)</td>
+											</tr>
+											<tr>
+												<th scope="row">France</th>
+												<td>5%</td>
+												<td>Yes</td>
+											</tr>
+											<tr>
+												<th scope="row">Mughals</th>
+												<td>10%</td>
+												<td>Yes</td>
+											</tr>
+										</thead>
+									</table>
+								</div>
 							</div>
-							<div class="collapse" id="eu4-3" data-bs-parent="#subPage">
-								IDK really
+							<div class="collapse" id="diploAnnex" data-bs-parent="#subPage">
+								Diploannex cost can go down to 1.25% of base. Relevant modifiers:
+								<div class="table-responsive">
+									<table class="table table-dark">
+										<thead>
+											<tr>
+												<th scope="col">Country</th>
+												<th scope="col">Bonus</th>
+												<th scope="col">Formable</th>
+												<th scope="col">Endtag</th>
+											</tr>
+											<tr>
+												<th scope="row">Provence missions</th>
+												<td>20%</td>
+												<td>No</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<th scope="row">Bohemian missions</th>
+												<td>15%</td>
+												<td>No</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<th scope="row">Hungarian missions</th>
+												<td>20%</td>
+												<td>No</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<th scope="row">Sardinia-Piedmont missions</th>
+												<td>10%</td>
+												<td>Yes</td>
+												<td>No</td>
+											</tr>
+											<tr>
+												<th scope="row">Austrian ideas</th>
+												<td>20%</td>
+												<td>Yes</td>
+												<td>German</td>
+											</tr>
+										</thead>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row gx-3">
-			<div class="col dark-purple p-2" id="bot-row">
-				BOTTOM ROW
-			</div>
+		<div class="row gx-3 dark-purple p-2" id="bot-row">
+			<div class="col-xs-8 col-sm-8 col-md-9 col-lg-10"></div>
+			<div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">	&#169; Oskari Kulmala</div>
 		</div>
 	</div>
 </body>

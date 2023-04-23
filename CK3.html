@@ -28,7 +28,7 @@
 <body>
 	<div class="container p-2 d-flex vh-100 flex-column">
 		<div class="row dark-purple gx-3" id="top-row">
-			<div class="col-sm-3 p-2">LOGO HERE</div>
+			<div class="col-sm-3 p-2"></div>
 			<div class="col-sm-4 p-2">
 
 				<ul class="breadcrumb">
@@ -231,6 +231,7 @@
 									that. We also want to know province terrain, so we also need to parse
 									game/common/province_terrain/00_province_terrain.txt. Using Node.js (remove the
 									non-titular titles at the beginning of the file first):
+								</p>
 								<pre><code>import { Jomini } from "jomini";
 
 import * as fs from 'fs'
@@ -247,11 +248,14 @@ const provTerr = parser.parseText(provinceTerrain);
 fs.writeFileSync('./province_terrain.json', JSON.stringify(provTerr));
 export { out };	</code></pre>
 
-								The rest is fairly simple. I'm currently using a python script to filter for appropriate
-								duchies.
-								Unfortunately I haven't spent much time on improving the quality and readability of the
-								code
-								since I intended it for personal use. <br>
+
+								<p>The rest is fairly simple. I'm currently using a python script to filter for
+									appropriate
+									duchies.
+									Unfortunately I haven't spent much time on improving the quality and readability of
+									the
+									code
+									since I intended it for personal use.</p>
 								<button class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#horror">
 									View code
 								</button>
@@ -574,10 +578,25 @@ def find_by_terrain(target):
 floodplains = ['floodplains']
 find_by_terrain(floodplains)</code></pre>
 								</div>
-								<br>Regardless, the script does its job. Though it can only find you jungles, it doesn't
-								know you can only build elephantries in India and South East
-								Asia, not Africa.
+								<br>
+								<p>Regardless, the script does its job. Though it can only find you jungles, it doesn't
+									know you can only build elephantries in India and South East
+									Asia, not Africa.
 								</p>
+								<p>
+									In there aren't very many duchy capitals in the jungle, unfortunately. There are
+									three in Deccan (Konkana, Gangavadi, Chera Nadu),
+									conveniently next to each other and close to a special building. Rajastan has
+									Haritanaka and Akara Dasarna, and there's Tirabhukti and Jharkand
+									in Bengal.
+								</p>
+								<p>For floodplains, you have the are around the Tigris, with the House of Wisdom in
+									Baghdad as a nice bonus. Many of the duchies only have 2-4 counties. There's also
+									the Nile delta, of course, with the pyramids of Giza as well (though not in a duchy
+									capital). There's some 2-county desert duchy capitals around, too. Both of these
+									areas are also conveniently accessible from the Indian ocean, especially the Tigris
+									if you can sail major rivers. Egypt also gives convenient access to the
+									Mediterranean.</p>
 							</div>
 							<!-- accordion -->
 						</div>
@@ -586,10 +605,9 @@ find_by_terrain(floodplains)</code></pre>
 				</div>
 			</div>
 		</div>
-		<div class="row gx-3">
-			<div class="col dark-purple p-2" id="bot-row">
-				BOTTOM ROW
-			</div>
+		<div class="row gx-3 dark-purple p-2" id="bot-row">
+			<div class="col-xs-8 col-sm-8 col-md-9 col-lg-10"></div>
+			<div class="col-xs-4 col-sm-4 col-md-3 col-lg-2"> &#169; Oskari Kulmala</div>
 		</div>
 	</div>
 </body>
