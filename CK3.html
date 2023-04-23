@@ -32,9 +32,9 @@
 			<div class="col-sm-4 p-2">
 
 				<ul class="breadcrumb">
-					<li><a href="index.html">Home</a></li> &nbsp | &nbsp
-					<li class="active">CK3</li> &nbsp | &nbsp
-					<li><a href="V3.html">V3</a></li> &nbsp | &nbsp
+					<li><a href="index.html">Home</a> &nbsp; | &nbsp;</li>
+					<li class="active">CK3 &nbsp; | &nbsp;</li>
+					<li><a href="V3.html">V3</a> &nbsp; | &nbsp;</li>
 					<li><a href="EUIV.html">EUIV</a></li>
 				</ul>
 			</div>
@@ -51,7 +51,7 @@
 								data-bs-target="#buildings" data-bs-parent="#subPage" aria-expanded="false"
 								id="buildingsLink" onclick="disableAccordionElement(this)">Buildings</button></li>
 						<li><button type="button" class="btn btn-link" data-bs-toggle="collapse"
-								data-bs-target="#locations" databs--parent="#subPage" aria-expanded="false"
+								data-bs-target="#locations" data-bs-parent="#subPage" aria-expanded="false"
 								id="locationsLink" onclick="disableAccordionElement(this)">Locations</button></li>
 					</ul>
 				</div>
@@ -62,7 +62,7 @@
 						<!-- <button data-bs-toggle="collapse" data-bs-target="#buildings"
 							data-bs-parent="#subPage">Buildings</button>
 						<button data-bs-toggle="collapse" data-bs-target="#locations"
-							databs--parent="#subPage">Locations</button> -->
+							data-bs-parent="#subPage">Locations</button> -->
 						<div class="accordion-group">
 							<div class="collapse show" id="overview" data-bs-parent="#subPage">
 								This page is about maximizing the number and effectiveness of your knights as a
@@ -127,12 +127,12 @@
 								feudal buildings, including in tribal era): <br>
 								<button class="btn btn-primary" type="button" data-bs-toggle="collapse"
 									data-bs-target="#tribalTable" aria-expanded="false"
-									aria-controls="#tribalTable">Tribal</button>
+									aria-controls="tribalTable">Tribal</button>
 								<button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-									data-bs-target="#earlyTable">Early
+									data-bs-target="#earlyTable" aria-controls="earlyTable">Early
 									Medieval</button>
 								<button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-									data-bs-target="#highTable">High
+									data-bs-target="#highTable" aria-controls="highTable">High
 									Medieval</button>
 								<div class="collapse" id="tribalTable">
 									Tribal (level 2 buildings, no duchy building available)
@@ -494,7 +494,7 @@ for name in camelries:
 		two_county_camelries_by_empire[empire_name][name] = {
 			'counties': num_counties, 'kingdom': kingdom_name}
 		two_county_camelries_by_empire[empire_name]['num_duchies'] += 1
-	elif num_counties < 5:
+	elif num_counties &lt; 5:
 		if empire_name not in three_and_four_county_camelries_by_empire.keys():
 			three_and_four_county_camelries_by_empire[empire_name] = {
 				'num_duchies': 0}
@@ -545,7 +545,7 @@ def find_by_terrain(target):
 		empire_name = find_de_jure_empire_of_duchy(name)
 		kingdom_name = find_de_jure_kingdom_of_duchy(name)
 		num_counties = duchy_titles[name]['num_counties']
-		if num_counties <= 2:
+		if num_counties &lt;= 2:
 			two_county_target_terrains[name] = {'empire': empire_name}
 			if empire_name not in two_county_target_terrains_by_empire.keys():
 				two_county_target_terrains_by_empire[empire_name] = {
@@ -553,7 +553,7 @@ def find_by_terrain(target):
 			two_county_target_terrains_by_empire[empire_name][name] = {
 				'counties': num_counties, 'kingdom': kingdom_name}
 			two_county_target_terrains_by_empire[empire_name]['num_duchies'] += 1
-		elif num_counties < 5:
+		elif num_counties &lt; 5:
 			if empire_name not in three_and_four_county_target_terrains_by_empire.keys():
 				three_and_four_county_target_terrains_by_empire[empire_name] = {
 					'num_duchies': 0}

@@ -32,9 +32,9 @@
 			<div class="col-sm-4 p-2">
 
 				<ul class="breadcrumb">
-					<li><a href="index.html">Home</a></li> &nbsp | &nbsp
-					<li><a href="CK3.html">CK3</a></li> &nbsp | &nbsp
-					<li class="active">V3</li> &nbsp | &nbsp
+					<li><a href="index.html">Home</a> &nbsp; | &nbsp;</li>
+					<li><a href="CK3.html">CK3</a> &nbsp; | &nbsp;</li>
+					<li class="active">V3 &nbsp; | &nbsp;</li>
 					<li><a href="EUIV.html">EUIV</a></li>
 				</ul>
 			</div>
@@ -46,11 +46,13 @@
 					<ul class="no-bullet">
 						<li><button data-bs-toggle="collapse" data-bs-target="#overview" data-bs-parent="#subPage"
 								aria-expanded="true" type="button" class="btn btn-link disabled"
-								id="overviewLink" onclick="disableAccordionElement(this)">Overview</button></li>
+								id="overviewLink" onclick="disableAccordionElement(this)" aria-controls="overview">Overview</button></li>
 						<li><button data-bs-toggle="collapse" data-bs-target="#priceFormula" data-bs-parent="#subPage"
-								id="priceFormulaLink" onclick="disableAccordionElement(this)" aria-expanded="false" type="button" class="btn btn-link">Price formula</button></li>
-						<li><button data-bs-toggle="collapse" data-bs-target="#value" databs--parent="#subPage"
-								id="valueProducedLink" onclick="disableAccordionElement(this)" aria-expanded="false" type="button" class="btn btn-link">Value produced</button></li>
+								id="priceFormulaLink" onclick="disableAccordionElement(this)" aria-expanded="false" type="button"
+								class="btn btn-link" aria-controls="priceFormula">Price formula</button></li>
+						<li><button data-bs-toggle="collapse" data-bs-target="#value" data-bs-parent="#subPage"
+								id="valueProducedLink" onclick="disableAccordionElement(this)" aria-expanded="false" type="button"
+								class="btn btn-link" aria-controls="value">Value produced</button></li>
 					</ul>
 				</div>
 			</div>
